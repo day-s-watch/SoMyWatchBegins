@@ -39,7 +39,7 @@ def similary_calculate(path1, path2, mode):
     return 0
 
 
-def readfolder(folder, picDir, pic, mode):
+def readfolder(folder, pic, mode):
 # 不同的mode对应不同的类型
     file_list = []
     t = 0
@@ -48,21 +48,12 @@ def readfolder(folder, picDir, pic, mode):
         for filename in files:
             filepath = os.path.join(root,filename)
             if (filepath.endswith(".png") or filepath.endswith(".jpg")):
-               remember = similary_calculate(picDir+pic,picDir+filename,mode)
+               remember = similary_calculate(folder+pic,folder+filename,mode)
                print filename
                print remember
-               if (remember > t) and remember!= 1:
+               if (remember > t) and remember != 1:
                    file_temp = filename
                    t = remember
 
     return file_temp
 
-
-if __name__ == '__main__':
-    print "###########直方图的距离计算#############"
-    #print "相似度最高的图是" + readfolder('F:\\raspberry\\similarity', 'F:/raspberry/similarity/', 't2.jpg',1)
-    print "相似度最高的图是" + readfolder('/home/pi/Project/python/untitled', '/home/pi/Project/python/untitled/similarity/', 't2.jpg',1)
-    #print '###########分块直方图的距离计算#############'
-    #print "相似度最高的图是" + readfolder('F:\\raspberry\\similarity', 'F:/raspberry/similarity/', 't2.jpg',2)
-    #print "##############感知哈希算法###############"
-    #print "相似度最高的图是" + readfolder('F:\\raspberry\\similarity', 'F:/raspberry/similarity/', 't2.jpg',3)
