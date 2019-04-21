@@ -15,7 +15,6 @@ if __name__ == '__main__':
     #print "相似度最高的图是" + sim.readfolder('/home/pi/Project/python/untitled/similarity/', 't2.jpg',1)
     lastPic = ''
     currentPic = ''
-
     tmp = 0
 
     #initialization
