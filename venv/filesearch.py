@@ -11,7 +11,7 @@ def findlast(folder):
     lastTime = 0
     for root, directors, files in os.walk(folder):
         for filename in files:
-            if filename.endswith(".png") or filename.endswith(".jpg"):
+            if (filename.lower()).endswith(".png") or (filename.lower()).endswith(".jpg"):
                 #print filename
                 # get modified time
                 #print os.stat(folder+filename).st_mtime
