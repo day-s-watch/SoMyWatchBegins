@@ -11,7 +11,8 @@ difference方法，是本文件中，最为基础的一个方法
 最终返回一个总体的相似度百分比
 '''
 
-def difference(hist1,hist2):
+
+def difference(hist1, hist2):
     sum1 = 0
     for i in range(len(hist1)):
        if (hist1[i] == hist2[i]):
