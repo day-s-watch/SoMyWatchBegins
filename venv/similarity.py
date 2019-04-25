@@ -3,15 +3,6 @@
 import os
 import PIL.Image as Image
 
-'''
-difference方法，是本文件中，最为基础的一个方法
-这一方法输入参数为两个list类型，通过对比这两个list类型的每一个元素
-来记录其相似度，如果相同位置上的数值完全相等，那么就在sum1中记录为1
-如果不相等，则取两者差值除以交大的一个数值，在与1算差值，也是一种相似度表达
-最终返回一个总体的相似度百分比
-'''
-
-
 def difference(hist1, hist2):
     sum1 = 0
     for i in range(len(hist1)):
