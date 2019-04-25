@@ -3,13 +3,6 @@
 import os
 import PIL.Image as Image
 
-'''
-difference函数是本代码段中，最为基础的一个函数，其在对于两个list类型的参数对象进行处理
-（我们可以合理推测，在python的代码处理中，最终图片类型都被转换为了list类型的序列）
-在判断中，如果两个list相同位置值一致，那么就记录+1进行标注
-如果不一致，则算出hist1与hist2的差值绝对值，除以hist1、2中的大值（可理解为差异的百分比）
-用1相减，留存的也是相似度值，最后返回总体百分比
-'''
 def difference(hist1,hist2):
     sum1 = 0
     for i in range(len(hist1)):
