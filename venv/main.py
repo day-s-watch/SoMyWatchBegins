@@ -15,6 +15,7 @@ conf.read("main.cfg")
 difThreshold = conf.getfloat("main", "difThreshold")
 picFolder = conf.get("main", "picFolder")
 alarmFlag = conf.getint("main", "alarmFlag")
+calcmode = conf.getint("main", "calcmode")
 
 if __name__ == '__main__':
     #print "相似度最高的图是" + sim.readfolder('/home/pi/Project/python/untitled/similarity/', 't2.jpg',1)
@@ -31,7 +32,7 @@ if __name__ == '__main__':
         time.sleep(2)
         currentPic = filesearch.findlast(picFolder)
         print currentPic
-        tmp = sim.similary_calculate(picFolder+lastPic, picFolder+currentPic, 1)
+        tmp = sim.similary_calculate(picFolder+lastPic, picFolder+currentPic, calcmode)
         if tmp <= difThreshold:
             alarmFlag = 1
             print tmp
