@@ -21,7 +21,7 @@ def similary_calculate(path1, path2, mode):
         hist2 = list(img2.getdata())
         return difference(hist1, hist2)
 
-    # 预处理
+    # preprocessing
     img1 = Image.open(path1).resize((256,256)).convert('RGB')
     img2 = Image.open(path2).resize((256,256)).convert('RGB')
     if(mode == 1):
@@ -55,4 +55,3 @@ def readfolder(folder, pic, mode):
                    t = remember
 
     return file_temp
-
